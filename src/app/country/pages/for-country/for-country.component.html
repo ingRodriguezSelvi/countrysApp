@@ -1,0 +1,32 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>For Country</h2>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <app-search
+        (onTermine)="search($event)"
+        (onDebunce)="sugget($event)"
+        [placeholder]="'Search country..'"
+      ></app-search>
+    </div>
+  </div>
+</div>
+<ul class="list-group" *ngIf="viewSugges">
+  <li class="list-group-item list-group-item-action" *ngFor="let item of countrysSuggets">
+    <a class="nav-link" [routerLink]="['country',item.alpha2Code]">{{item.name}}</a>
+  </li>
+  <li class="list-group-item list-group-item-action" (click)="search(termino)" >
+    <a class="nav-link">Search: "{{termino}}"</a>
+  </li>
+</ul>
+
+<hr />
+<div class="alert alert-danger" *ngIf="flagError">
+  Sorry no should country :(..
+</div>
+<div class="row" *ngIf="countrys.length > 0">
+  <div class="col">
+    <app-countrys-table [countrys]="countrys"></app-countrys-table>
+  </div>
+</div>

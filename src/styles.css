@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+h1{
+  font-size: x-large;
+}
+h2{
+  font-size: large;
+}
+h3{
+  font-size: medium;
+}
+h4{
+  font-size: medium;
+}
+h5{
+  font-size: medium;
+}
+.mr-1{
+  margin-right: 5px
+}

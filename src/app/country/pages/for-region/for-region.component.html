@@ -1,0 +1,28 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h3>
+    Search by region <small>{{ regionActiva }}</small>
+  </h3>
+  <hr />
+  <h5>Select the region</h5>
+
+  <div class="row">
+    <div class="col">
+      <button
+        *ngFor="let region of regions"
+        [class]="getClassCSS(region)"
+        (click)="activateRegion(region)"
+      >
+        {{ region }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-danger" *ngIf="flagError">
+  Sorry no should country :(..
+</div>
+<div class="row" *ngIf="countrys.length > 0">
+  <div class="col">
+    <app-countrys-table [countrys]="countrys"></app-countrys-table>
+  </div>
+</div>
